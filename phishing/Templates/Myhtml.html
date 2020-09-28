@@ -1,0 +1,124 @@
+<html>
+    <head>
+        <link rel="Stylesheet" href="style.css">
+        <header id="headers">PHISHING WEBSITE</header>
+        <style>#headers{
+            width: 100%;
+            height: 10%;
+            background:rgb(2, 2, 71);
+            text-align: center;
+            padding-top: 22px;
+            font-size:30px ;
+            position: fixed;
+            opacity: 1.0;
+            color: white;
+            z-index: 10;
+        
+        }
+        
+        .form{
+            padding-top: 150px;
+            padding-left: 25%;
+            background:rgba(255, 255, 255, 0.281);
+            position: relative;
+            padding-bottom: 50px;
+            border: red;
+            box-shadow: teal;
+        }
+        
+        .textarea{
+            width: 50%;
+            height: 8%;
+            position: relative;
+            color: black;
+            font-size: 20px;
+            
+        }
+        
+        body{
+            background-image: url(https://cdn.pixabay.com/photo/2014/12/28/13/20/wordpress-581849__340.jpg);
+            background-size: cover;
+            background-position: center ;
+            background-repeat: no-repeat;
+        }
+        
+        .container{
+            padding-left: 20%;
+            padding-right: 20%;
+            position: relative;
+        }
+        ::-webkit-input-placeholder{
+            text-align: center;
+            color: navy;
+        }
+        .button{
+            width: 50%;
+            height: 5%;
+            color: navy;
+        }
+        
+        .buttonwrapper{
+            margin-left: 15%;
+            }
+        .elementwrapper{
+                color:white;
+                opacity: 1.0;
+            }
+        .output{
+            padding-top:30px;
+            font-size: 30px;
+            color:white;
+            text-align: center;
+            background:rgb(2, 2, 71);
+            padding-bottom:40px ;
+        
+        }
+        footer{
+            width: 100%;
+            height: 15%;
+        
+        }</style>
+    </head>
+    <body>
+        
+        <div class="container">
+        <form action="{{url_for('y_predict')}}"method="post" class="form">
+            <div class="elementwrapper"></div>
+            <input type="number" name="IP" class="textarea" required placeholder=" IP_ADDRESS"/><br><br>
+            <input type="number" name="URL" class="textarea" required placeholder=" URL_LENGTH"/><br><br>
+            <input type="number" name="AT" class="textarea" required placeholder=" AT_SYMBOL"/><br><br>
+            <input type="number" name="DBL" class="textarea"required placeholder=" DOUBLE_SLASH"/><br><br>
+            <input type="number" name="SUB" class="textarea"required placeholder=" SUB_DOMAIN"/><br><br>
+            <input type="number" name="SSL" class="textarea"required placeholder=" SSLFINAL_STATE"/><br><br>
+            <input type="number" name="REG_LEN" class="textarea"required placeholder=" DOMAIN_REGISTRATION_LENGTH"/><br><br>
+            <input type="number" name="PORT" class="textarea"required placeholder=" PORT"/><br><br>
+            <input type="number" name="HTTPS" class="textarea"required placeholder=" HTTPS_TOKEN"/><br><br>
+            <input type="number" name="REQ_URL" class="textarea"required placeholder=" REQUEST_URL "/><br><br>
+            <input type="number" name="ANCHOR" class="textarea"required placeholder=" URL_OF_ANCHOR"/><br><br>
+            <input type="number" name="LINK_TAG" class="textarea"required placeholder=" LINKS_IN_TAGS "/><br><br>
+            <input type="number" name="EMAIL" class="textarea"required placeholder=" SUBMITTING_TO_EMAIL"/><br><br>
+           <input type="number" name="ABN" class="textarea"required placeholder=" ABNORMAL_URL"/><br><br>
+           <input type="number" name="RDT" class="textarea"required placeholder=" REDIRECT"/><br><br>
+           <input type="number" name="POPUP" class="textarea"required placeholder=" POPUPWINDOW"/><br><br>
+           <input type="number" name="AGE" class="textarea"required placeholder=" AGE_OF_DOMAIN"/><br><br>
+           <input type="number" name="DNS" class="textarea"required placeholder=" DNSRECORD"/><br><br>
+           <input type="number" name="TRAFFIC" class="textarea"required placeholder=" WEB_TRAFFIC"/><br><br>
+           <input type="number" name="PG" class="textarea"required placeholder=" PAGE_RANK"/><br><br>
+           <input type="number" name="GGL" class="textarea"required placeholder=" GOOGLE_INDEX"/><br><br>
+           <input type="number" name="LINKS" class="textarea"required placeholder="LINKS_POINTING_TO_PAGE"/><br><br>
+           <input type="number" name="STATS" class="textarea"required placeholder=" STATISTICAL_REPORT"/><br><br>
+           
+           <div class="buttonwrapper">
+            <button type="submit"  class="button">Submit</button>
+           </div>
+           </div>
+
+        </form>
+        <br>
+        <br>
+        <footer>
+        <div class="output">{{prediction_text}}</div>
+        </footer>
+    </div>
+    </body>
+</html>
